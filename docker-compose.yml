@@ -10,7 +10,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - jira_pg_data:/var/lib/postgresql/data
+      - tasks_pg_data:/var/lib/postgresql/data
 
 volumes:
-  jira_pg_data:
+  tasks_pg_data:
