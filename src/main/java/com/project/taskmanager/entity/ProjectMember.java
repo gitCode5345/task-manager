@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import com.project.taskmanager.enums.ProjectMemberRole;
 
 @Entity
 @Table(name = "project_members")
@@ -27,6 +28,7 @@ public class ProjectMember {
     @JoinColumn(name = "user_id")
     private User user;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 50)
-    private String role;
+    private ProjectMemberRole role;
 }
