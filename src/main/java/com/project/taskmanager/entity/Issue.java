@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import com.project.taskmanager.enums.IssuePriority;
+import com.project.taskmanager.enums.IssueStatus;
+import com.project.taskmanager.enums.IssueType;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -45,13 +48,16 @@ public class Issue {
 
     private String description;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private String type;
+    private IssueType type;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private String status;
+    private IssueStatus status;
 
-    private String priority;
+    @Enumerated(EnumType.STRING)
+    private IssuePriority priority;
 
     @ManyToOne
     @JoinColumn(name = "assignee_id")
