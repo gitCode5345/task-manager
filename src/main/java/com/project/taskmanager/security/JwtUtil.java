@@ -33,7 +33,7 @@ public class JwtUtil {
                 .subject(email)
                 .issuedAt(now)
                 .expiration(expiration)
-                .signWith(secretKey)
+                .signWith(this.secretKey)
                 .compact();
     }
 
